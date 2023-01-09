@@ -1,0 +1,952 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+ 
+@Poornimatt123 
+kubernetes
+/
+minikube
+Public
+Code
+Issues
+779
+Pull requests
+63
+Actions
+Projects
+1
+Security
+Insights
+Releases: kubernetes/minikube
+ReleasesTags
+Find a release
+v1.28.0
+Nov 5, 2022
+@minikube-bot minikube-bot
+ v1.28.0
+ 986b1eb
+v1.28.0 Latest
+📣😀 Please fill out our fast 5-question survey so that we can learn how & why you use minikube, and what improvements we should make. Thank you! 💃🎉
+
+Release Notes
+Version 1.28.0 - 2022-11-04
+SECURITY WARNING: Log4j CVEs were detected in an image the efk addon uses, if you don't use the efk addon no action is required. If you use the addon we recommend running minikube addons disable efk to terminate the vulnerable pods.
+See #15280 for more details.
+
+Security:
+
+Prevent enabling efk addon due to containing Log4j CVE #15281
+Features:
+
+Auto select network on QEMU #15266
+Implement mounting on QEMU with socket_vmnet #15108
+Added cloud-spanner emulator addon #15160
+Add minikube license command #15158
+Minor Improvements:
+
+Allow port forwarding on Linux with Docker Desktop #15126
+Add back service to mount VirtualBox host directory into the guest. #14784
+ISO: Add FANOTIFY_ACCESS_PERMISSIONS to kernel configs #15232
+When enabling addon warn if addon has no associated Github username #15081
+Bug Fixes:
+
+Fix detecting preload cache of size 0 as valid #15256
+Fix always writing to daemon by trimming docker.io from image name #14956
+Fix minikube tunnel repeated printout of status #14933
+Version Upgrades:
+
+Upgrade Portainer addon to 2.15.1 & HTTPS access enabled #15172
+Upgrade Headlamp addon to 0.13.0 #15186
+ISO: Upgrade Docker from 20.10.18 to 20.10.20 #15159
+KIC: Upgrade base image from ubuntu:focal-20220826 to ubuntu:focal-20220922 #15075
+KCI: Upgrade base image from ubuntu:focal-20220922 to ubuntu:focal-20221019 #15219
+For a more detailed changelog, including changes occurring in pre-release versions, see CHANGELOG.md.
+
+Thank you to our contributors for this release!
+
+Chris Kannon
+Francis Laniel
+Jeff MAURY
+Jevon Tane
+Medya Ghazizadeh
+Nitin Agarwal
+Oldřich Jedlička
+Rahil Patel
+Steven Powell
+Tian
+Yue Yang
+joaquimrocha
+klaases
+shixiuguo
+Thank you to our PR reviewers for this release!
+
+spowelljr (25 comments)
+medyagh (14 comments)
+Thank you to our triage members for this release!
+
+RA489 (64 comments)
+klaases (39 comments)
+afbjorklund (23 comments)
+spowelljr (22 comments)
+medyagh (4 comments)
+Installation
+See Getting Started
+
+Binary Checksums
+darwin-amd64: 667ab2baeae7829392533a9ef733e94ea88c87a8edf38ee088d349077152cc95
+darwin-arm64: 8dc1b6018ce7ba344394e26dac62a7db477dbfcba63d9cdf55ea8e0c2fc755f4
+linux-arm: 802af1d58e5707f2c1e2253f88dadf79bbde25bd803ad726d68ef21eb2b2b75a
+linux-arm64: 648d09c00ceee3b53d60ea92796c772abcb42bd9bb7e871fe0b233e39a4675ce
+linux-ppc64le: 27b4d08b98711ab89306e92085d7dd129339c170483d1c54343a71dfa75b4cc7
+linux-s390x: 3067c320e521b6ad1642b50eb955305ec7cefca54b53f73713494a857b1431a0
+linux-amd64: 58cead5ece9815a61d4be253a07b2385f8cf373d9e1eba5c9783444e4e9e2d8e
+windows-amd64.exe: 65304e5c5c98a688fb0abc2d76d77b3b441f9501d6dfa71d96a0532f4114d34c
+
+ISO Checksums
+amd64: fbf80209b11a5821c31dadba76982a31a1e09396e8353ce81e92a7d85d921749
+arm64: b5e2f1b912d42ed94b6cb837618c1b7fbafbedc5082c736fccd70be3dec6d833
+
+Assets 52
+docker-machine-driver-hyperkit
+8.42 MB
+Nov 5, 2022
+docker-machine-driver-hyperkit.sha256
+65 Bytes
+Nov 5, 2022
+docker-machine-driver-kvm2
+12.2 MB
+Nov 5, 2022
+docker-machine-driver-kvm2-1.28.0-0.x86_64.rpm
+3.63 MB
+Nov 5, 2022
+docker-machine-driver-kvm2-amd64
+12.2 MB
+Nov 5, 2022
+docker-machine-driver-kvm2-amd64.sha256
+65 Bytes
+Nov 5, 2022
+docker-machine-driver-kvm2-arm64
+11.7 MB
+Nov 5, 2022
+docker-machine-driver-kvm2-arm64.sha256
+65 Bytes
+Nov 5, 2022
+docker-machine-driver-kvm2-x86_64
+12.2 MB
+Nov 5, 2022
+docker-machine-driver-kvm2.sha256
+65 Bytes
+Nov 5, 2022
+Source code
+(zip)
+Nov 5, 2022
+Source code
+(tar.gz)
+Nov 5, 2022
+15 people reacted
+ShadowUser17, xdorro, haunt98, nico-arianto, gchudnov, marcosfelipp, g1eny0ung, driv, eslammohammed24, boldandbusted, and Touutae-lab reacted with thumbs up emoji
+Tarun-314, rogeriomm, and boldandbusted reacted with hooray emoji
+leynier, gchudnov, yngfoxx, rogeriomm, and boldandbusted reacted with rocket emoji
+v1.27.1
+Oct 8, 2022
+@minikube-bot minikube-bot
+ v1.27.1
+ fe869b5
+v1.27.1
+📣😀 Please fill out our fast 5-question survey so that we can learn how & why you use minikube, and what improvements we should make. Thank you! 💃🎉
+
+Release Notes
+Version 1.27.1 - 2022-10-07
+Features (Experimental):
+
+QEMU Driver: Add support for dedicated network on macOS (socket_vmnet) #14989
+QEMU Driver: Add support minikube service and tunnel on macOS #14989
+Minor Imprevements:
+
+Check if context is invalid during update-context command #15032
+Use SSH tunnel if user specifies bindAddress #14951
+Warn QEMU users if DNS issue detected #15073
+Bug Fixes:
+
+Fix status command taking a long time on docker driver while paused #15077
+Fix not allowing passing only an exposed port to --ports #15085
+Fix minikube dashboard failing on macOS #15037
+Fix incorrect command in powershell command tip #15012
+Version Upgrades:
+
+Bump Kubernetes version default: v1.25.2 and latest: v1.25.2 #14995
+Upgrade kubernetes dashboard from v2.6.0 to v2.7.0 #15000
+For a more detailed changelog, including changes occurring in pre-release versions, see CHANGELOG.md.
+
+Thank you to our contributors for this release!
+
+Anthony Nandaa
+Jeff MAURY
+Medya Ghazizadeh
+Rob Leland
+Steven Powell
+Yuiko Mouri
+cokia
+klaases
+ziyi-xie
+Thank you to our PR reviewers for this release!
+
+eiffel-fl (9 comments)
+medyagh (6 comments)
+AkihiroSuda (2 comments)
+klaases (2 comments)
+t-inu (1 comments)
+Thank you to our triage members for this release!
+
+klaases (31 comments)
+RA489 (30 comments)
+afbjorklund (17 comments)
+nikimanoledaki (7 comments)
+medyagh (3 comments)
+Check out our contributions leaderboard for this release!
+
+Installation
+See Getting Started
+
+Binary Checksums
+darwin-amd64: aa60ff42b4d60b1a65552a5f527d78f68efa887e1eab0af013996badfbccc3c8
+darwin-arm64: c12ad4e16460e8cdf9f49a9cf6514878875453485570cafe4423fc4d3a69d590
+linux-s390x: cb22c8c54c4e9b441ec6680f38dc067909bc1f793a205202274eaff2cd947e9f
+linux-amd64: 159bc79f3914dadb7c9f56b6e9d5b73a1c54acb26dca8f1ea84b99ff5da42620
+linux-arm: f14348a7653672745e92eba934543c0a9f3fa14fbdeff3cf76da41e174769bf0
+linux-arm64: 6a3fb0eaac110c35f018948838aa6ab0898e811a08f76e74b85d8573fb08b1d0
+linux-ppc64le: aae55c97d7fa9d3180843cffc4c6a504d6882c45a232bdef23e46ec83e191aae
+windows-amd64.exe: d5957435f3a94a43ce0c764ecaf3b9c4f7c6f8bcafdc4ef7b2b86937ec5c311c
+
+ISO Checksums
+amd64: ccc432f3f60647fa050def9da98daf720266e87fd1ed1d3b60f60380e8dd291a
+arm64: 62f4f28634e78aa394c0f1d5aa735634b8c258c0cd40f7c30a156dca325c9a9f
+
+Assets 48
+10 people reacted
+hitenkoku, xdorro, jongwooo, krouser, abc0012383, gchudnov, and kingsangwoon reacted with thumbs up emoji
+nico-arianto, ShadowUser17, gchudnov, and eins78 reacted with hooray emoji
+v1.27.0
+Sep 16, 2022
+@minikube-bot minikube-bot
+ v1.27.0
+ 4243041
+v1.27.0
+📣😀 Please fill out our fast 5-question survey so that we can learn how & why you use minikube, and what improvements we should make. Thank you! 💃🎉
+
+Release Notes
+Version 1.27.0 - 2022-09-15
+Kubernetes v1.25:
+
+Bump default Kubernetes version to v1.25.0 and resolve /etc/resolv.conf regression #14848
+Skip metallb PodSecurityPolicy object for kubernetes 1.25+ #14903
+The DefaultKubernetesRepo changed for 1.25.0 #14768
+Minor Improvements:
+
+Add fscrypt kernel options #14783
+Output kubeadm logs #14697
+Bug fixes:
+
+Fix QEMU delete errors #14950
+Fix containerd configuration issue with insecure registries #14482
+Fix registry when custom images provided #14690
+Version Upgrades:
+
+ISO: Update Docker from 20.10.17 to 20.10.18 #14935
+Update kicbase base image to Ubuntu:focal-20220826 #14904
+Update registry addon image from 2.7.1 to 2.8.1 #14886
+Update gcp-auth-webhook addon from v0.0.10 to v0.0.11 #14847
+Update Headlamp addon image from v0.9.0 to v0.11.1 #14802
+For a more detailed changelog, including changes occurring in pre-release versions, see CHANGELOG.md.
+
+Thank you to our contributors for this release!
+
+Abirdcfly
+Alex
+Anders F Björklund
+Andrew Hamilton
+Jeff MAURY
+Jānis Bebrītis
+Marcel Lauhoff
+Medya Ghazizadeh
+Renato Costa
+Santhosh Nagaraj S
+Siddhant Khisty
+Steven Powell
+Yuiko Mouri
+klaases
+mtardy
+shaunmayo
+shixiuguo
+Thank you to our PR reviewers for this release!
+
+spowelljr (23 comments)
+medyagh (6 comments)
+klaases (5 comments)
+vbezhenar (2 comments)
+nixpanic (1 comments)
+reylejano (1 comments)
+t-inu (1 comments)
+Thank you to our triage members for this release!
+
+afbjorklund (76 comments)
+klaases (58 comments)
+RA489 (38 comments)
+spowelljr (16 comments)
+eiffel-fl (10 comments)
+Check out our contributions leaderboard for this release!
+
+Installation
+See Getting Started
+
+Binary Checksums
+darwin-amd64: fca0cbabad64868cf00d37349b953b16c06bafa13569595ef7721bd9178b4a5c
+darwin-arm64: 6b0a3d392c57ba97659a3d8a6a063e6d6e212fbd1b32bd2c5044ab4a611d5314
+linux-amd64: b6ab1207474255b9ea755ced4394b4b618a1cfa7b8394ddd1d307288130fb495
+linux-arm: 4ab5323f1f365589d944818dc73700f1ceb9d930932de47e0dc0012a22c51f38
+linux-arm64: 5d698c417d41d42e577e33eeb3666d33232c1f45585665cd6d4f6dacb8aeb0d2
+linux-ppc64le: 2387199325ba90dd944ea0685a2672f16b66ed188674e15970f2286f1f3a7505
+linux-s390x: 39da0ad9e879c715402af432d90580f0e17eec6f76e59c6bd0622fd815c53428
+windows-amd64.exe: ebecc7633b3a91b652a81fb17faa4d1bb35fecff94e6309533e95933c9224ef7
+
+ISO Checksums
+amd64: ccc432f3f60647fa050def9da98daf720266e87fd1ed1d3b60f60380e8dd291a
+arm64: 62f4f28634e78aa394c0f1d5aa735634b8c258c0cd40f7c30a156dca325c9a9f
+
+Assets 52
+10 people reacted
+gchudnov, Lonor, AjayKMehta, ShadowUser17, and aarzhanov reacted with thumbs up emoji
+gchudnov, thr3a, cloudlena, fwartner, nico-arianto, daanvinken, and aarzhanov reacted with hooray emoji
+v1.26.1
+Aug 3, 2022
+@minikube-bot minikube-bot
+ v1.26.1
+ 62e108c
+v1.26.1
+📣😀 Please fill out our fast 5-question survey so that we can learn how & why you use minikube, and what improvements we should make. Thank you! 💃🎉
+
+Release Notes
+Version 1.26.1 - 2022-08-02
+Minor Improvements:
+
+Check for cri-dockerd & dockerd runtimes when using none-driver on Kubernetes 1.24+ #14555
+Add solution message for when cri-docker is missing #14483
+Limit number of audit entries #14695
+Optimize audit logging #14596
+Show the container runtime when running without kubernetes #13432 #14200
+Add warning when enabling thrid-party addons #14499
+Bug fixes:
+
+Fix url index out of range error in service #14658
+Fix incorrect user and profile in audit logging #14562
+Fix overwriting err for OCI "minikube start" #14506
+Fix panic when environment variables are empty #14415
+Version Upgrades:
+
+Bump Kubernetes version default: v1.24.3 and latest: v1.24.3 #14606
+ISO: Update Docker from 20.10.16 to 20.10.17 #14534
+ISO/Kicbase: Update cri-o from v1.22.3 to v1.24.1 #14420
+ISO: Update conmon from v2.0.24 to v2.1.2 #14545
+Update gcp-auth-webhook from v0.0.9 to v0.0.10 #14670
+ISO/Kicbase: Update base images #14481
+For a more detailed changelog, including changes occurring in pre-release versions, see CHANGELOG.md.
+
+Thank you to our contributors for this release!
+
+Akihiro Suda
+Akira Yoshiyama
+Bradley S
+Christoph "criztovyl" Schulz
+Gimb0
+HarshCasper
+Jeff MAURY
+Medya Ghazizadeh
+Niels de Vos
+Paul S. Schweigert
+Santhosh Nagaraj S
+Steven Powell
+Tobias Pfandzelter
+anoop142
+inifares23lab
+klaases
+peizhouyu
+zhouguowei
+吴梓铭
+李龙峰
+Thank you to our PR reviewers for this release!
+
+spowelljr (50 comments)
+medyagh (9 comments)
+atoato88 (3 comments)
+klaases (2 comments)
+afbjorklund (1 comments)
+Thank you to our triage members for this release!
+
+afbjorklund (75 comments)
+RA489 (56 comments)
+klaases (32 comments)
+spowelljr (27 comments)
+medyagh (13 comments)
+Check out our contributions leaderboard for this release!
+
+Installation
+See Getting Started
+
+Binary Checksums
+linux-arm64: 419f65fb0dc1045a07943192f11f6fc91858ee576b4f9ddb0be5b3f637e36ab0
+linux-ppc64le: a87b01d9776b5e2f941d3bf9a8dbe9ccde12c154eff89494eb579346bbb4343b
+linux-s390x: b655a3ad176746260dc937974c179477487bac45c5adfa046612d50691530e99
+linux-amd64: 9acd25706661b932ee98063147e58080cb949b92fd0d97b3b96dc5f898dcad21
+linux-arm: 6aa8bdb2b0eb7a1c306907cf5941d9d1e7d3cd623471b859c1da81cea2cd189d
+windows-amd64.exe: 9c9934a396acdd164e2b2449def5d831aeb1577571b8ac9d922ffe466b0f270e
+darwin-arm64: 61b0543ee7a27b48992517df17ce7a56ad687762210f55112c7f2eb8a0e55655
+darwin-amd64: 57578517edec2fcf8425b47ef9535c56c1b7c0f383b4d676ebf3787076ac4ede
+
+ISO Checksums
+amd64: b764c656066434fcb83ab7b0a9512ca03dab6faab5469074f7701f7fe6b8678d
+arm64: 46fb2e38fdd2d56b8b7fd46851ed5e8cb53fd804973cde4b2b09988d8495e765
+
+Assets 52
+9 people reacted
+nico-arianto, roharon, zmrdltl, Virus288, Rabieezz, rlizano19, JustOnce, gchudnov, and FrankApiyo reacted with hooray emoji
+v1.26.0
+Jun 23, 2022
+@minikube-bot minikube-bot
+ v1.26.0
+ f4b4128
+v1.26.0
+📣😀 Please fill out our fast 5-question survey so that we can learn how & why you use minikube, and what improvements we should make. Thank you! 💃🎉
+
+Release Notes
+Version 1.26.0 - 2022-06-22
+Note: Using a minikube cluster created before 1.26.0, using the docker container-runtime (default), and plan to upgrade the Kubernetes version to v1.24+? After upgrading, you may need to delete & recreate it. none driver users, cri-docker is now required to be installed, install instructions. See issue #14410 for more info.
+
+Features:
+
+Add headlamp addon #14315
+Add InAccel FPGA Operator addon #12995
+QEMU:
+
+Only set highmem=off for darwin if qemu version is below 7.0 or memory is below 3GB #14291
+Define qemu as a qemu2 driver alias #14284
+Allow users to supply custom QEMU firmware path #14283
+Minor Improvements:
+
+Add eBPF related kernel options #14316
+Add bind address flag for minikube tunnel #14245
+Add active column for minikube profile list #14079
+Add documentation URL to the addon list table #14123
+minikube config defaults kubernetes-version lists all currently supported Kubernetes versions #13775
+Support starting minikube with the Podman driver on NixOS systems #12739
+Bug Fixes:
+
+Fix terminated commands not writing to audit log #13307
+Fix Podman port mapping publish on macOS #14290
+Fix minikube delete deleting networks from other profiles #14279
+Version Upgrades:
+
+Bump Kubernetes version default: v1.24.1 and latest: v1.24.1 #14197
+ISO: Upgrade Docker from 20.10.14 to 20.10.16 #14153
+ISO: Upgrade kernel from 4.19.235 to 5.10.57 #12707
+Upgrade Dashboard addon from v2.5.1 to v2.6.0 & MetricsScraper from v1.0.7 to v1.0.8 #14269
+Upgrade gcp-auth-webhook from v0.0.8 to v0.0.9 #14372
+Upgrade nginx image from v1.2.0 to v1.2.1 #14317
+Important Changes in Pre-Release Versions
+Features:
+
+Add configure option to registry-aliases addon #13912
+Add support for building aarch64 ISO #13762
+Support rootless Podman driver (Usage: minikube config set rootless true) #13829
+QEMU:
+
+Add support for the QEMU driver #13639
+Fix qemu firmware path locations #14182
+Re-establish apiserver tunnel on restart #14183
+For a more detailed changelog, including changes occurring in pre-release versions, see CHANGELOG.md.
+
+Thank you to our contributors for this release!
+
+Alex Andrews
+Anders F Björklund
+Elias Koromilas
+Francis Laniel
+Giildo
+Harsh Vardhan
+Jack Zhang
+Jeff MAURY
+Kevin Grigorenko
+Kian-Meng Ang
+Leonardo Grasso
+Medya Ghazizadeh
+Nikhil Sharma
+Nils Fahldieck
+Pablo Caderno
+Peter Becich
+Predrag Rogic
+Santhosh Nagaraj S
+Sharif Elgamal
+Steven Powell
+Toshiaki Inukai
+klaases
+lakshkeswani
+Laya Kott
+lilongfeng
+simonren-tes
+ziyi-xie
+李龙峰
+Thank you to our PR reviewers for this release!
+
+spowelljr (76 comments)
+sharifelgamal (11 comments)
+medyagh (8 comments)
+afbjorklund (6 comments)
+kakkoyun (2 comments)
+knrt10 (2 comments)
+mprimeaux (2 comments)
+shu-mutou (2 comments)
+javierhonduco (1 comments)
+nburlett (1 comments)
+Thank you to our triage members for this release!
+
+spowelljr (39 comments)
+RA489 (30 comments)
+sharifelgamal (27 comments)
+afbjorklund (14 comments)
+klaases (14 comments)
+Installation
+See Getting Started
+
+Binary Checksums
+darwin-amd64: cdfbbbdd01de8e8819d7d917f155c7a7cc6236af1ac97c4ae6f3ff9252b150b7
+darwin-arm64: 39f90dc37d5cf4b6d150b177a4c9d2967d9d923cd8eb7d5b99268987a0287aba
+linux-amd64: a988b7c890d9dc34033155b8b721827b3eff0e22c3d436409a8a3310aa564547
+linux-arm: 5319911f90d173d3f1156082e608c3d7bde5e0d0d5706e61a968972b44e8885d
+linux-arm64: 7b6e79f51e671d2708afe8daea4d0bc0d9464992d9cf3d4415f608205c26a6ff
+linux-ppc64le: bc8794ae7b5f3a02151085a316b02a39463dbac279ac0698b9d0edaef562b11e
+linux-s390x: efc5765244660a48b6ef3c866b9db3b3a05913ef22c37e0286a221498c88469c
+windows-amd64.exe: 08c06e6ddff4f2e47a2d094365aeb85a3ac8ad1b86361db9b06a02f3668bd5a3
+
+ISO Checksum
+amd64: e64268d4f07b4c754719544a6dcd14760df6b1032a42db519c04e61f66c88453
+arm64: 40904486a3a6b558cfb2fca164bc874e783e3cd5337537ba7576a558f958171a
+
+Assets 60
+22 people reacted
+Lonor, CoolCloud, klaases, tsjk, lexakimov, medaka0213, jack80342, and CreativeWarlock reacted with thumbs up emoji
+invidian, ShadowUser17, HaveFun83, meftunca, minhtrannhat, nico-arianto, tyabu12, smhhoseinee, klaases, geek182, and 7 more reacted with hooray emoji
+v1.26.0-beta.1
+May 18, 2022
+@minikube-bot minikube-bot
+ v1.26.0-beta.1
+ f0a6d95
+v1.26.0-beta.1 Pre-release
+📣😀 Please fill out our fast 5-question survey so that we can learn how & why you use minikube, and what improvements we should make. Thank you! 💃🎉
+
+Release Notes
+Version 1.26.0-beta.1 - 2022-05-17
+QEMU driver enhancements:
+
+fix qemu firmware path locations #14182
+re-establish apiserver tunnel on restart #14183
+Features:
+
+Add configure option to registry-aliases addon #13912
+For a more detailed changelog, including changes occuring in pre-release versions, see CHANGELOG.md.
+
+Thank you to our contributors for this release!
+
+Jack Zhang
+Pablo Caderno
+Sharif Elgamal
+Steven Powell
+Yuki Okushi
+loftkun
+Thank you to our PR reviewers for this release!
+
+spowelljr (20 comments)
+afbjorklund (1 comments)
+sharifelgamal (1 comments)
+Thank you to our triage members for this release!
+
+afbjorklund (4 comments)
+spowelljr (4 comments)
+Al4DIN (1 comments)
+Gimb0 (1 comments)
+Neandril (1 comments)
+Installation
+See Getting Started
+
+ISO Checksum
+amd64: 59cfdcc11fbbd29c81bae245f9c8345cd8444667b167b7b12171034fd6b1001d
+arm64: 6fe143505ac3da2e702b4ec24730632d8b933e8b45cd88e6b382e0d1c7d50c84
+
+Assets 52
+v1.26.0-beta.0
+May 14, 2022
+@minikube-bot minikube-bot
+ v1.26.0-beta.0
+ 51ba46c
+v1.26.0-beta.0 Pre-release
+📣😀 Please fill out our fast 5-question survey so that we can learn how & why you use minikube, and what improvements we should make. Thank you! 💃🎉
+
+Release Notes
+Version 1.26.0-beta.0 - 2022-05-13
+Featues:
+
+Add support for the QEMU driver #13639
+Add support for building aarch64 ISO #13762
+Support rootless Podman driver (Usage: minikube config set rootless true) #13829
+Minor Improvements:
+
+Add JSON output to minikube delete #13979
+Add --audit flag to minikube logs command #13991
+Add --disable-metrics flag #13802
+Get latest valid tag for each image during caching #14006
+Remove docker requirement for none driver #13885
+Add 'subnet' flag for docker/podman driver #13730
+Don't write logs that contain environment variables #13877
+Implemented minimum and recommended Docker versions #13842
+Bug Fixes:
+
+Fix "Your cgroup does not allow setting memory" #14115
+Fix nvidia-gpu with kvm-driver #13972
+Fix minikube delete for Podman v4 #13881
+Fix pre command flags #13995
+Fix logging when JSON output selected #13955
+Fix port validation error on specifying tcp/udp or range of ports. #13812
+Fix not downloading kic for offline mode #13910
+Fix trying to pause multiple containers with runc #13783
+Fix minikube servce docker/port-forward issues #13756
+Version Upgrades:
+
+Upgrade Kubernetes default: v1.23.6 and latest: v1.23.6 #14144
+ISO/KIC: Upgrade buildkit from 0.9.0 to 0.10.3 #13791
+ISO: Upgrade Docker from 20.10.12 to 20.10.14 #13860
+ISO: Upgrade crio from 1.22.1 to 1.22.3 #13800
+ISO: Upgrade buildroot from 2021.02.4 to 2021.02.12 #13814
+Upgrade nginx image from 1.1.1 to 1.2.0 #14028
+ISO: Upgrade falco-module from 0.24.0 to 0.31.1 #13659
+Upgrade kubernetes dashboard from 2.3.1 to 2.5.1 #13741
+KIC: Upgrade kicbase base image from 20210401 to 20220316 #13815
+ISO: Upgrade Podman from 2.2.1 to 3.4.2 #13126
+ISO: Add packaging for crun #11679
+For a more detailed changelog, including changes occuring in pre-release versions, see CHANGELOG.md.
+
+Thank you to our contributors for this release!
+
+Akihiro Suda
+Akira Yoshiyama
+Anders F Björklund
+Ashwin Somasundara
+Carlos Eduardo Arango Gutierrez
+Daniel Petri
+F1ko
+Filip Nikolic
+Ileriayo Adebiyi
+Jeff MAURY
+Jin Zhang
+Medya Ghazizadeh
+Nikhil2001
+Pablo Caderno
+Piotr Resztak
+Predrag Rogic
+Sean Wei
+Sharif Elgamal
+Steven Powell
+Tomohito YABU
+Toshiaki Inukai
+betaboon
+ckannon
+edwinwalela
+klaases
+naveensrinivasan
+staticdev
+ziyi-xie
+Thank you to our PR reviewers for this release!
+
+spowelljr (55 comments)
+medyagh (39 comments)
+afbjorklund (14 comments)
+klaases (14 comments)
+jesperpedersen (9 comments)
+sharifelgamal (6 comments)
+atoato88 (3 comments)
+jepio (3 comments)
+mprimeaux (2 comments)
+shu-mutou (2 comments)
+t-inu (2 comments)
+AkihiroSuda (1 comments)
+Thank you to our triage members for this release!
+
+afbjorklund (52 comments)
+klaases (39 comments)
+RA489 (28 comments)
+spowelljr (24 comments)
+zhan9san (24 comments)
+Installation
+See Getting Started
+
+ISO Checksum
+amd64: 59cfdcc11fbbd29c81bae245f9c8345cd8444667b167b7b12171034fd6b1001d
+arm64: 6fe143505ac3da2e702b4ec24730632d8b933e8b45cd88e6b382e0d1c7d50c84
+
+Assets 52
+v1.25.2
+Feb 25, 2022
+@minikube-bot minikube-bot
+ v1.25.2
+ 362d5fd
+v1.25.2
+📣😀 Please fill out our fast 5-question survey so that we can learn how & why you use minikube, and what improvements we should make. Thank you! 💃🎉
+
+Release Notes
+Version 1.25.2 - 2022-02-23
+Features:
+
+[Addon] Kong Ingress Controller #13326
+add arch to binary and image cache paths #13539
+Adds 'minikube service --all' feature to allow forwarding all services in a namespace #13367
+Make the default container runtime dynamic #13251
+Add --disable-optimizations flag #13340
+Bug Fixes:
+
+Fix losing cluster on restart #13506
+Using Get-CmiInstance to detect Hyper-V availability #13596
+Fixes validation on image repository URL when it contains port but no scheme #13053
+Fixed SIGSEGV in kubectl when k8s not running #13631
+Fix hard coded docker driver in minikube service command #13514
+Fix hard coded docker driver in minikube tunnel command #13444
+Fix IstioOperator CustomResourceDefinition for istio-provisioner addon #13024
+fix ingress (also for multinode clusters) #13439
+Add exit message for too new Kubernetes version #13354
+drivers/kvm: Use ARP for retrieving interface ip addresses #13482
+kubeadm: allow skipping kube-proxy addon on restart #13538
+configure container runtimes for clusters without Kubernetes too #13442
+Version Upgrades:
+
+KIC: Upgrade cri-dockerd #13302
+upgrade libvirt to "8th gen" #13440
+Upgrade cri-dockerd to fix the socket path #13563
+ISO: Add packaging for cri-dockerd #13191
+For a more detailed changelog, including changes occuring in pre-release versions, see CHANGELOG.md.
+
+Thank you to our contributors for this release!
+
+Akira Yoshiyama
+Anders F Björklund
+Anoop C S
+Balakumaran GR
+Carlos Santana
+Chris Tomkins
+Daniel Helfand
+Jeff MAURY
+Jin Zhang
+Medya Ghazizadeh
+Nikhil Sharma
+Olivier Bouchoms
+Piotr Resztak
+Predrag Rogic
+Sahan Serasinghe
+Sharif Elgamal
+Steven Powell
+Tiago Alves
+Todd MacIntyre
+Viktor Gamov
+ckannon
+klaases
+nishipy
+pedrothome1
+Thank you to our PR reviewers for this release!
+
+medyagh (23 comments)
+afbjorklund (10 comments)
+sharifelgamal (10 comments)
+spowelljr (10 comments)
+t-inu (6 comments)
+klaases (4 comments)
+s-kawamura-w664 (3 comments)
+atoato88 (2 comments)
+alexbaeza (1 comments)
+csantanapr (1 comments)
+totollygeek (1 comments)
+Thank you to our triage members for this release!
+
+RA489 (31 comments)
+afbjorklund (27 comments)
+spowelljr (25 comments)
+klaases (13 comments)
+sharifelgamal (12 comments)
+Check out our contributions leaderboard for this release!
+
+Installation
+See Getting Started
+
+ISO Checksum
+ae3fde59ff5034348c19c77124d3719e634a40a33faf1b66d21c1f5fc55a12fc
+
+Assets 50
+15 people reacted
+Guillaume-Mayer, Yatheesh-Nagella, valaparthvi, junwatu, alrog0, ruhulabedin, Abhinav-gupta103, aeuge, zicla, theo-commits, and 4 more reacted with thumbs up emoji
+eabykov reacted with eyes emoji
+v1.25.1
+Jan 21, 2022
+@minikube-bot minikube-bot
+ v1.25.1
+ 3e64b11
+v1.25.1
+📣😀 Please fill out our fast 5-question survey so that we can learn how & why you use minikube, and what improvements we should make. Thank you! 💃🎉
+
+Release Notes
+Version 1.25.1 - 2022-01-20
+Resolved regression breaking minikube start with hyperkit driver #13418
+For a more detailed changelog, including changes occuring in pre-release versions, see CHANGELOG.md.
+
+Thank you to our contributors for this release!
+
+Medya Ghazizadeh
+Sharif Elgamal
+Steven Powell
+Thank you to our triage members for this release!
+
+klaases (13 comments)
+RA489 (12 comments)
+spowelljr (7 comments)
+afbjorklund (6 comments)
+sharifelgamal (2 comments)
+Installation
+See Getting Started
+
+ISO Checksum
+1480bde8ba4510d9009504c3b7e5821d3284461c92ff5b0fd880aefc5be4caa0
+
+Assets 48
+5 people reacted
+tigefa4u, ruanpienaar, mvyas-hi, ZloyAdmin, and jiaweiGe472 reacted with thumbs up emoji
+v1.25.0
+Jan 20, 2022
+@minikube-bot minikube-bot
+ v1.25.0
+ 3edf480
+v1.25.0
+📣😀 Please fill out our fast 5-question survey so that we can learn how & why you use minikube, and what improvements we should make. Thank you! 💃🎉
+
+Release Notes
+Version 1.25.0 - 2022-01-18
+Features:
+
+New flag "--binary-mirror" to override mirror URL downloading (kubectl, kubelet, & kubeadm) #12804
+Add format flag to the image ls command #12996
+Add all mount flags to start command #12930
+Auto set config to support btrfs storage driver #12990
+Support CRI-O runtime with Rootless Docker driver (--driver=docker --container-runtime=cri-o) #12900
+Allow custom cert for ingress to be overwritten #12897
+Allow ppc64le & armv7 with Docker driver #13124
+Minor Improvements:
+
+Support DOCKER_HOST not being numeric IP #13300
+Support mounting with the --no-kubernetes flag #13144
+Support changing apiserver-ips when restarting minikube #12692
+Bug fixes:
+
+Fix ingress for k8s v1.19 #13173
+Fix mounting with VMware #12426 #13000
+Fix Bad file descriptor on mount #13013
+Fix docker-env with new PowerShell versions #12870
+Version Upgrades:
+
+Upgrade Docker, from v20.10.8 to v20.10.11
+Upgrade containerd, from v1.4.9 to v1.4.12
+Upgrade cri-o from v1.22.0 to v1.22.1 #13059
+Update gcp-auth-webhook image to v0.0.8 #13185
+Deprecation:
+
+mount: Remove --mode flag #13162
+For a more detailed changelog, including changes occuring in pre-release versions, see CHANGELOG.md.
+
+Thank you to our contributors for this release!
+
+Akihiro Suda
+Akira Yoshiyama
+Anders F Björklund
+Ashwin901
+Carl Chesser
+Daehyeok Mun
+Davanum Srinivas
+Dimitris Aragiorgis
+Emilano Vazquez
+Eugene Kalinin
+Frank Schwichtenberg
+James Yin
+Jan Klippel
+Jeff MAURY
+Joey Klaas
+Marcus Puckett
+Medya Ghazizadeh
+Nikhil Sharma
+Nikolay Nikolaev
+Oleksii Prudkyi
+Pablo Caderno
+Piotr Resztak
+Predrag Rogic
+Rahil Patel
+Sergio Galvan
+Sharif Elgamal
+Steven Powell
+Tian Yang
+Toshiaki Inukai
+Vishal Jain
+Zvi Cahana
+gamba47
+rahil-p
+srikrishnabh93@gmail.com
+Thank you to our PR reviewers for this release!
+
+spowelljr (65 comments)
+medyagh (64 comments)
+t-inu (46 comments)
+atoato88 (39 comments)
+sharifelgamal (39 comments)
+klaases (17 comments)
+afbjorklund (8 comments)
+s-kawamura-w664 (8 comments)
+yosshy (6 comments)
+neolit123 (3 comments)
+AkihiroSuda (1 comments)
+dims (1 comments)
+dobegor (1 comments)
+dytyniuk (1 comments)
+inductor (1 comments)
+rmohr (1 comments)
+Thank you to our triage members for this release!
+
+spowelljr (48 comments)
+afbjorklund (44 comments)
+RA489 (37 comments)
+medyagh (33 comments)
+sharifelgamal (25 comments)
+Installation
+See Getting Started
+
+ISO Checksum
+1480bde8ba4510d9009504c3b7e5821d3284461c92ff5b0fd880aefc5be4caa0
+
+Assets 50
+         
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
